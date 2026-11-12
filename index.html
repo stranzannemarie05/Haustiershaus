@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" content="notranslate">
+    <title>Haustiershaus | Exklusives für Ihre Lieblinge</title>
+    <style>
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+		header { background-color: #FDFBF7 }
+        body { font-family: 'Playfair Display', 'Georgia', serif; margin: 0; padding: 0; min-height: 100vh; background-color: #fcfbf9; /* Soft cream / off-white */ }
+        .hero-section { position: relative; min-height: 100vh; width: 100%; padding: 140px 40px 100px 80px; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start; background-image: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.2)), url('https://i.ibb.co/RpjGJ50C/F2.jpg'); background-repeat: no-repeat; background-position: top center; background-size: cover; background-attachment: fixed; }
+        .navbar { position: fixed; top: 0; left: 0; width: 100%; background-color: rgba(255, 255, 255, 0.95); box-shadow: 0 2px 5px rgba(0,0,0,0.1); z-index: 100; display: flex; flex-direction: row; align-items: center; justify-content: flex-start; padding: 20px 40px; white-space: nowrap; }
+        .navbar-brand {
+         display: flex;
+         align-items: center;
+         gap: 10px;
+         font-weight: bold;
+         font-size: 1.4rem;
+         color: #333;
+         text-decoration: none;
+         flex-shrink: 0;
+}
+        .navbar-links { display: flex; flex-direction: row; align-items: center; list-style: none; margin: 0; margin-left: 60px; padding: 0; gap: 40px; }
+        .navbar-links a { text-decoration: none; color: #444; font-size: 1.15rem; font-weight: 700; transition: color 0.2s ease, transform 0.2s ease; padding: 5px 0; font-family: inherit; }
+        .navbar-links a:hover { color: #007BFF; transform: translateY(-1px); }
+        .content-wrap { max-width: 700px; width: 100%; z-index: 2; text-align: left; padding: 0; }
+        .content-wrap h1 { font-family: 'Playfair Display', 'Georgia', serif; font-size: 3.2rem; font-weight: 900; color: #111; line-height: 1.1; margin-top: 0; margin-bottom: 24px; text-shadow: 0 2px 4px rgba(255, 255, 255, 0.5); }
+        .content-wrap p { font-family: 'Playfair Display', 'Georgia', serif; font-size: 1.3rem; line-height: 1.6; color: #222; font-weight: 700; margin-bottom: 40px; text-shadow: 0 1px 2px rgba(255, 255, 255, 0.6); }
+        .portfolio-section { min-height: 100vh; background: #ffffff; padding: 100px 80px; text-align: center; }
+        .portfolio-section h2 { font-family: 'Playfair Display', 'Georgia', serif; font-size: 40px; margin-bottom: 40px; color: #111; }
+.services-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 100px 80px;
+  font-family: 'Playfair Display', 'Georgia', serif;
+  text-align: center;
+}
+.services-section h2 {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: 40px;
+  margin-bottom: 40px;
+  color: #111;
+}
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+.service-card {
+  background: #fdfbf7;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.service-image img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.service-content {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.service-content h3 {
+  font-size: 1.25rem;
+  margin-bottom: 12px;
+  color: #1a1a1a;
+}
+
+.service-content p {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+}
+		
+        .category-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
+        .category-card { background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: transform 0.3s ease, box-shadow 0.3s ease; display: flex; flex-direction: column; text-align: left; border: 1px solid #eee; }
+        .category-card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
+        .category-image { width: 100%; height: 220px; object-fit: cover; display: block; background-color: #f0ede9; }
+        .category-info { padding: 20px; display: flex; flex-direction: column; flex-grow: 1; }
+        .category-info h3 { font-family: 'Playfair Display', 'Georgia', serif; margin: 0 0 10px 0; font-size: 1.4rem; color: #222; }
+        .category-info p { font-family: 'Playfair Display', 'Georgia', serif; margin: 0; color: #666; font-size: 0.95rem; line-height: 1.5; flex-grow: 1; }
+		.category-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 14px 28px;
+    background-color: #1a73e8; /* Lighter Blue effect for visual response */
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 8px; /* Rounded corners */
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.2s ease;
+}
+
+.category-btn:hover {
+    background-color: #1557b0; /* Hover Dark Blue */}
+
+        .reviews-section { padding: 100px 80px; background-color: #faf9f6; text-align: center; }
+        .reviews-section h2 { font-size: 40px; margin-bottom: 40px; color: #111; font-family: 'Playfair Display', 'Georgia', serif; }
+        .reviews-grid { display: grid; grid-template-columns: 1fr; gap: 30px; max-width: 1200px; margin: 0 auto; }
+        .review-card { background: #ffffff; border-radius: 40px 15px 30px 20px / 20px 30px 15px 40px; padding: 40px 35px; box-shadow: 0 4px 15px rgba(0,0,0,0.05) ; border: 1px solid #eee; text-align: left; display: flex; flex-direction: column; justify-content: space-between; }
+        .review-stars { color: #ffc107; font-size: 1.25rem; margin-bottom: 15px; }
+        .review-text { font-style: italic; color: #444; font-size: 1rem; line-height: 1.6; margin: 0 0 20px 0; }
+        .review-author { font-weight: bold; color: #111; font-size: 0.95rem; }
+
+.why-us-section { 
+  padding: 100px 80px; 
+  background-color: #fcfbf9; 
+  text-align: center; 
+}
+.why-us-section .container { 
+  max-width: 1200px; 
+  margin: 0 auto; 
+}
+.why-us-section h2 { 
+  font-size: 40px; 
+  color: #111; 
+  margin-bottom: 12px; 
+  font-family: 'Playfair Display', 'Georgia', serif; 
+}
+.section-subtitle { 
+  font-size: 1.1rem; 
+  color: #666666; 
+  margin-bottom: 48px; 
+  font-family: Playfair Display', 'Georgia', serif; 
+}
+.cards-grid { 
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+  gap: 30px; 
+}
+.feature-card { 
+  padding: 48px 36px; 
+  border-radius: 24px; 
+  text-align: left; 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: flex-end; 
+  min-height: 380px; 
+  box-shadow: 0 4px 15px rgba(0,0,0,0.02); 
+}
+.feature-card h3 { 
+  font-size: 1.75rem; 
+  font-weight: 600; 
+  margin-bottom: 16px; 
+  color: #2c2c2c; 
+  font-family: 'Playfair Display', 'Georgia', serif; 
+}
+.feature-card p { 
+  font-size: 1rem; 
+  line-height: 1.6; 
+  color: #333333; 
+  font-family: Playfair Display', 'Georgia', serif; 
+  opacity: 0.9; 
+  margin: 0; 
+}
+.card-cyan { background-color: #e0f4f5; }
+.card-orange { background-color: #ffcc70; }
+.card-teal { background-color: #38b6a5; }
+.card-teal h3, .card-teal p { color: #ffffff; }
+/* FAQ Section */
+.faq-section {
+  padding: 4rem 1.5rem;
+  background-color: #ffffff;
+}
+
+.faq-section h2 {
+  font-size: 2rem;
+  color: #333333;
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.faq-list {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.faq-item {
+  background-color: #f8f9fa;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.faq-item:hover {
+  border-color: #1a73e8;
+}
+
+.faq-item[open] {
+  background-color: #ffffff;
+  border-color: #1a73e8;
+  box-shadow: 0 4px 12px rgba(26, 115, 232, 0.08);
+}
+
+.faq-item summary {
+  list-style: none;
+  padding: 1.25rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333333;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  user-select: none;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: "+";
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #1a73e8;
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+
+.faq-item[open] summary::after {
+  content: "−";
+}
+
+.faq-item p {
+  padding: 0 1.5rem 1.25rem 1.5rem;
+  margin: 0;
+  font-size: 0.98rem;
+  color: #555555;
+  line-height: 1.6;
+  border-top: 1px solid #f0f0f0;
+  padding-top: 1rem;
+}
+        .site-footer {
+            background-color: #ffffff;
+            border-top: 1px solid #eeeeee;
+            padding: 40px 20px;
+            text-align: center;
+            font-size: 1rem;
+            color: #666;
+        }
+
+        .site-footer p {
+            margin: 0 0 8px 0;
+        }		
+        .site-footer a {
+            color: #444;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .site-footer a:hover {
+            color: #007BFF;
+        }
+.footer-brand {
+  text-align: center;
+}
+.social-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: initial; 
+  transition: opacity 0.2s ease;
+}
+.social-links a:hover {
+  opacity: 0.7;
+  }
+
+.social-links a.facebook { color: #1877F2; }
+.social-links a.instagram { color: #E4405F; }
+.social-links a.tiktok { color: #000000; }
+.social-links a.twitter, .social-links a.x { color: #000000; }
+.social-links a.linkedin { color: #0A66C2; }
+.social-links a.youtube { color: #FF0000; }
+
+.footer-bottom {
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 1px solid #eeeeee;
+    font-size: 0.875rem;
+    color: #595959;
+}
+.footer-legal-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-legal-links li {
+  margin: 0;
+}
+
+.footer-legal-links a {
+  color: #595959;
+  text-decoration: none;
+  font-weight: normal;
+  transition: color 0.2s ease;
+}
+
+.footer-legal-links a:hover {
+  color: #007BFF;
+  text-decoration: underline;
+}
+    </style>
+</head>
+<body>
+<nav class="navbar">
+    <a href="#" class="navbar-brand">
+    <svg width="32" height="32" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M10 30L32 12L54 30" stroke="#1a73e8" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M16 26V50C16 51.6569 17.3431 53 19 53H45C46.6569 53 48 51.6569 48 50V26" stroke="#333333" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+      <ellipse cx="32" cy="41" rx="5.5" ry="4.5" fill="#1a73e8"/>
+      <circle cx="24.5" cy="34" r="2.3" fill="#1a73e8"/>
+      <circle cx="29.5" cy="31" r="2.3" fill="#1a73e8"/>
+      <circle cx="34.5" cy="31" r="2.3" fill="#1a73e8"/>
+      <circle cx="39.5" cy="34" r="2.3" fill="#1a73e8"/>
+    </svg>
+    <span>Haustiershaus</span>
+  </a>		
+    <ul class="navbar-links">
+        <li><a href="#">Startseite</a></li>
+        <li><a href="#unsere-kategorien">Kategorien</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li> 
+    </ul>
+</nav>
+    <header class="hero-section">
+        <div class="content-wrap">
+            <h1>Exklusives für Ihre Lieblinge</h1>
+            <p>Entdecken Sie unseren kuratierten Marktplatz für hochwertiges Zubehör. Von artisanalem Spielzeug bis zu orthopädischen Betten – wir bieten erstklassige Qualität für das Wohlbefinden Ihrer treuen Begleiter.</p>
+
+		<a href="kontakt.html#kontakt-formular" class="category-btn">Unverbindlich anfragen</a>
+	</div>
+    </header>
+<section class="services-section">
+        <h2>Unsere Leistungen</h2>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-image">
+        <img src="https://images.unsplash.com/photo-1651571466193-421586c038e1?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" alt="Abgleich von Heimtierprodukten">
+      </div>
+      <div class="service-content">
+        <h3>Abgleich von Heimtierprodukten</h3>
+        <p>Unterstützen Sie Kunden dabei, passendes Futter, Schlafplätze, Spielzeug und Zubehör zu finden – abgestimmt auf die Größe, das Alter, die Vorlieben und die täglichen Bedürfnisse ihres Haustiers. Kunden können ihre Anforderungen über ein Anfrageformular übermitteln und erhalten daraufhin Produktempfehlungen aus dem Angebot des Marktplatzes. Dieser Service generiert qualifizierte Leads, die für die weitere Kundenbetreuung und Kaufunterstützung genutzt werden können.</p>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-image">
+        <img src="https://images.unsplash.com/photo-1583336663277-620dc1996580?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" alt="Individuelle Haustier-Pakete">
+      </div>
+      <div class="service-content">
+        <h3>Individuelle Haustier-Pakete</h3>
+        <p>Stellen Sie praktische Produktkombinationen zusammen, die auf den Lebensstil des jeweiligen Haustiers zugeschnitten sind – etwa ein Starter-Set für Welpen, ein Paket für Wohnungskatzen oder eine komfortable Ausstattung für ältere Tiere. Jedes Set kann Futter, Schlafgelegenheiten, Spielzeug sowie Zubehör für den Alltag aus dem Marktplatz-Sortiment enthalten. Kunden können ein individuell abgestimmtes Paket anfragen und erhalten anschließend telefonisch oder per E-Mail Informationen zu Verfügbarkeit und Preisen.</p>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-image">
+        <img src="https://plus.unsplash.com/premium_photo-1661598387821-8bbe556979a2?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" alt="Echtzeit-Aktualisierung zu Anfragen">
+      </div>
+      <div class="service-content">
+        <h3>Echtzeit-Aktualisierung zu Anfragen</h3>
+        <p>Kunden können detaillierte Informationen zu ausgewählten Haustierprodukten anfragen – etwa zur aktuellen Verfügbarkeit, zu verschiedenen Varianten, Produktspezifikationen oder Bestellmöglichkeiten. Dieser Anfrageprozess eignet sich besonders gut für Produkte, bei denen kein Preis angegeben ist; das Marktplatz-Team kann direkt auf Ihr Anliegen reagieren und sorgt so für einen reibungslosen Bestellvorgang.</p>
+      </div>
+    </div>
+  </div>
+</section>
+    <main id="unsere-kategorien" class="portfolio-section">
+        <h2>Unsere Kategorien</h2>
+<div class="category-grid">
+    <!-- Category 1: Foods -->
+    <div class="category-card">
+        <img src="https://images.unsplash.com/photo-1647616350787-6428e907a7fa?q=80&w=685&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" alt="Hundefutter" class="category-image">
+        <div class="category-info">
+            <h3>Hundefutter</h3>
+            <p>Artgerechte Nahrung und erlesene Snacks aus naturbelassenen Zutaten für vitale Energie und ein glänzendes Fell.</p>
+            <a href="kontakt.html" class="category-btn">Anfrage senden</a>
+        </div>
+    </div>
+            <!-- Category 2: Beds -->
+            <div class="category-card">
+                <img src="https://images.unsplash.com/photo-1581888475780-27b6b0bc3690?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" alt="Exklusive Betten" class="category-image">
+                <div class="category-info">
+                    <h3>Exklusive Betten</h3>
+                    <p>Ergonomische Schlafplätze und stilvolle Kissen, die optimalen Gelenkschutz bieten und sich formschön in Ihr Zuhause einfügen.</p>
+					<a href="kontakt.html" class="category-btn">Anfrage senden</a>
+                </div>
+            </div>
+            <!-- Category 3: Toys -->
+            <div class="category-card">
+                <img src="https://images.unsplash.com/photo-1774694766760-8c27a3c5b8a3?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" alt="Artisanaler Spielzeug" class="category-image">
+                <div class="category-info">
+                    <h3>Artisanaler Spielzeug</h3>
+                    <p>Nachhaltig hergestelltes Beschäftigungsspielzeug, das die Intelligenz fordert und langlebigen Spielspaß garantiert.</p>
+					<a href="kontakt.html" class="category-btn">Anfrage senden</a>
+                </div>
+            </div>
+            <!-- Category 4: Katzenfutter -->
+            <div class="category-card">
+                <img src="https://images.unsplash.com/photo-1764576504536-dbdfa4cb1d9a?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" alt="Katzenfutter" class="category-image">
+                <div class="category-info">
+                    <h3>Katzenfutter</h3>
+                    <p>Eine glückliche Katze macht einen immer glücklich.</p>
+					<a href="kontakt.html" class="category-btn">Anfrage senden</a>
+                </div>
+            </div>
+            <!-- Category 5: Hundepflege -->
+            <div class="category-card">
+                <img src="https://images.unsplash.com/photo-1625321171045-1fea4ac688e9?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" alt="Hundepflege" class="category-image">
+                <div class="category-info">
+                    <h3>Hundepflege</h3>
+                    <p>Genau wie wir Menschen verdienen auch sie eine rundum gelungene Pflege.</p>
+					<a href="kontakt.html" class="category-btn">Anfrage senden</a>
+                </div>
+            </div>
+            <!-- Category 6: Spaßbereich für Katzen -->
+            <div class="category-card">
+                <img src="https://images.unsplash.com/photo-1652113935269-cb82cbd01524?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" alt="Spaßbereich für Katzen" class="category-image">
+                <div class="category-info">
+                    <h3>Spaßbereich für Katzen</h3>
+                    <p>Deine geliebten Katzen schlafen am liebsten an unterhaltsamen Orten – statt in ihren Betten.</p>
+					<a href="kontakt.html" class="category-btn">Anfrage senden</a>
+                </div>
+            </div>
+            <!-- Category 7: Katzenspielzeug -->
+            <div class="category-card">
+                <img src="https://images.unsplash.com/photo-1757064170496-0b7ac1650644?q=80&w=702&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" alt="Katzenspielzeug" class="category-image">
+                <div class="category-info">
+                    <h3>Katzenspielzeug</h3>
+                    <p>Deine geliebte Katze kann dich ständig stören, wenn sie nichts zum Spielen hat.</p>
+					<a href="kontakt.html" class="category-btn">Anfrage senden</a>
+                </div>
+            </div>
+            <!-- Category 8: Katzenpflege -->
+            <div class="category-card">
+                <img src="https://plus.unsplash.com/premium_photo-1663047910718-c8758a6785e9?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" alt="Katzenpflege" class="category-image">
+                <div class="category-info">
+                    <h3>Katzenpflege</h3>
+                    <p>Die Fellpflege deiner Katze kann dir inneren Frieden schenken.</p>
+					<a href="kontakt.html" class="category-btn">Anfrage senden</a>
+                </div>
+            </div>
+            <!-- Category 9: Reisetasche für Katzen -->
+            <div class="category-card">
+                <img src="https://images.unsplash.com/photo-1767352630502-d07b98d73be1?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" alt="Reisetasche für Katzen" class="category-image">
+                <div class="category-info">
+                    <h3>Reisetasche für Katzen</h3>
+                    <p>Deine geliebten Katzen reisen liebend gerne mit dir, da sie sich dadurch besser fühlen.</p>
+					<a href="kontakt.html" class="category-btn">Anfrage senden</a>
+                </div>
+            </div>
+        </div>
+    </main>
+<section id="reviews" class="reviews-section">
+    <div>    
+    <h2>Das sagen Tierfreunde</h2>
+<div class="reviews-grid">
+    <!-- Review Card 1 -->
+    <div class="review-card">
+        <div>
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">"Die Qualität der Hundebetten ist einfach unschlagbar. Mein Golden Retriever liebt seinen neuen Schlafplatz und die Beratung war super herzlich!"</p>
+        </div>
+        <span class="review-author">– Anna Maria M.</span>
+    </div>
+
+    <!-- Review Card 2 -->
+    <div class="review-card">
+        <div>
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">"Das gesunde Katzenfutter hat das Fell meiner Maine Coon total zum Glänzen gebracht. Schnelle Lieferung und super Premium-Verpackung!"</p>
+        </div>
+        <span class="review-author">– Christian W.</span>
+    </div>
+
+    <!-- Review Card 3 -->
+    <div class="review-card">
+        <div>
+            <div class="review-stars">★★★★☆</div>
+            <p class="review-text">"Tolles handgemachtes Spielzeug. Sehr langlebig und hält auch wildem Kauen stand. Absolut empfehlenswert für jeden Hundebesitzer."</p>
+        </div>
+        <span class="review-author">– Sabine K.</span>
+    </div>
+	
+	    <!-- Review Card 4 -->
+    <div class="review-card">
+        <div>
+            <div class="review-stars">★★★★☆</div>
+            <p class="review-text">"Alle Produkte sind von erstklassiger Qualität und gut verarbeitet; meine Haustiere spielen immer sehr gerne mit diesen Produkten."</p>
+                </div>
+                <span class="review-author">– Leu Müller</span>
+            </div>
+	    <div class="review-card">
+        <div>
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">"Nach langer Suche bin ich schließlich auf HaustierHaus gestoßen; sie haben mir dabei geholfen, ein Katzennetz auf meinem Balkon anzubringen – ganz ohne Bohren."</p>
+                </div>
+                <span class="review-author">– N Helmut</span>
+            </div>
+        </div>
+    </div>		
+        </div>
+    </div>
+	<section id="warum-uns" class="why-us-section">
+    <div class="container">
+        <h2>Warum Haustiershaus</h2>
+        <p class="section-subtitle">Ihr Partner für erstklassiges Zubehör und individuelle Beratung.</p>
+        
+        <div class="cards-grid">
+            <div class="feature-card card-cyan">
+                <h3>Premium Auswahl</h3>
+                <p>Sorgfältig kuratierte Artikel von handgemachtem Spielzeug bis hin zu hochwertigem Futter.</p>
+            </div>
+            
+            <div class="feature-card card-orange">
+                <h3>Persönlicher Service</h3>
+                <p>Wir begleiten Sie und Ihr Tier mit Fachwissen, um die perfekte Auswahl für Ihren Alltag zu treffen.</p>
+            </div>
+            
+            <div class="feature-card card-teal">
+                <h3>Vertrauensvoller Kauf</h3>
+                <p>Transparente Abwicklung und exklusive Produkte für ein gesundes Haustierleben in Deutschland.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="faq" class="faq-section">
+  <h2>Häufig gestellte Fragen</h2>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary>Wie funktioniert der Bestellprozess?</summary>
+      <p>Sie wählen Ihre Wunschkategorien aus und senden uns eine unverbindliche Anfrage. Wir melden uns mit individuellen Empfehlungen, Preisen und Lieferzeiten bei Ihnen.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Gibt es einen Mindestbestellwert für individuelle Pakete?</summary>
+      <p>Nein, wir stellen sowohl kleine Starter-Sets als auch umfangreiche Ausstattungspakete ganz nach Ihrem Budget zusammen.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Wie schnell erhalte ich eine Rückmeldung?</summary>
+      <p>Unser Team bearbeitet Ihre Anfrage werktags in der Regel innerhalb von 24 Stunden per E-Mail oder telefonisch.</p>
+    </details>
+  </div>
+</section>
+<footer class="site-footer">
+  <div class="footer-grid">    
+    <div class="footer-brand">
+      <h3>Haustiershaus</h3>
+      <p>Tierweg 12, 10117 Berlin, Deutschland</p>
+      <p>Tel: +49 30 901820 (Mo–Fr, 9–17 Uhr)</p>
+      <p><a href="mailto:hallo@haustiershaus.de">hallo@haustiershaus.de</a></p>
+      <ul class="social-links">
+        <li>
+          <a href="https://facebook.com" class="facebook" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://instagram.com" class="instagram" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://tiktok.com" class="tiktok" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://youtube.com" class="youtube" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://x.com" class="x" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://linkedin.com" class="linkedin" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="footer-bottom">
+    <p>© 2026 Haustiershaus. Alle Rechte vorbehalten.</p>
+	<ul class="footer-legal-links">
+      <li><a href="/impressum">Impressum</a></li>
+      <li><a href="/datenschutz">Datenschutzerklärung</a></li>
+    </ul>
+  </div>
+</footer>
+</body>
+</html>
